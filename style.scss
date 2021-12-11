@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+:root {
+  --dark-blue : hsl(236, 21%, 26%);
+  --very-dark-blue : hsl(235, 16%, 14%);
+  --very-dark : hsl(234, 17%, 12%);
+  --grayish-blue : hsl(237, 18%, 59%);
+  --soft-red :  hsl(345, 95%, 68%);
+  --white : hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+body {
+  margin: 0;
+  font-family: 'Red Hat Text', sans-serif;
+  text-transform: uppercase;
+}
+
+header {
+  background-image: linear-gradient(var(--very-dark), var(--very-dark-blue));
+}
+
+.container {
+  height: auto;
+  /* min-height: 100vh; */
+  overflow: hidden;
+  background-image: url(/images/bg-stars.svg), url(/images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+}
+.container h1 {
+  text-align: center;
+  margin-top: 15vh;
+  color: var(--white);
+  letter-spacing: .7rem;
+  padding: 3rem .5rem;
+}
+.form-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.678);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  z-index: 98;
+
+  transform: scale(0);
+  /* transition: 200ms; */
+}
+.form-container.active {
+  transform: scale(1);
+}
+.form {
+  padding: 1rem;
+  background-color: var(--very-dark-blue);
+  display: flex;
+  flex-direction: column;
+  transition: 200ms;
+  border-radius: 10px;
+  position: fixed;
+  width: 60vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 99;
+  text-transform: capitalize;
+  text-align: center;
+}
+.form.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.form label {
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  letter-spacing: .2rem;
+}
+.form input {
+  display: block;
+  margin: .4rem 0 0 0;
+  height: 46px;
+  width: 100%;
+  background-color: var(--very-dark-blue);
+  border: 0;
+  padding: 0 1rem;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: .89;
+}
+.form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+#date, #time {
+  border: 2px solid var(--dark-blue);
+}
+#date:focus, #time:focus {
+  /* border: 2px solid var(--soft-red); */
+  outline: none;
+  border: 2px solid var(--grayish-blue);
+  background-color: var(--grayish-blue);
+}
+#submit, #clear, #cancel {
+  cursor: pointer;
+}
+#submit:active, #clear:active, #cancel:active {
+  filter: brightness(.9);
+}
+#submit {
+  background-color: rgb(0, 128, 68);
+}
+#clear {
+  background-color: var(--dark-blue);
+  margin-right: .2rem;
+}
+#cancel {
+  background-color: var(--dark-blue);
+  margin-left: .2rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+.card {
+  margin: 0 .5rem;
+  width: 112px;
+  position: relative;
+}
+.tile {
+  display: flex;
+  position: relative;
+  height: 112px;
+  background-image: linear-gradient(var(--dark-blue), var(--dark-blue));
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 7px 0 0 rgba(0, 0, 0, 0.25);
+}
+.tile::after, .tile::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--very-dark);
+  position: absolute;
+  z-index: 10;
+}
+.tile::after {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.tile::before {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.num {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--soft-red);
+  position: relative;
+}
+.num::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.123);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.caption  {
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--grayish-blue);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 4rem 0;
+}
+footer img {
+  margin: 1rem;
+}
+footer img:hover {
+  filter: brightness(0) invert(100%);
+}
+
+.attribution { 
+  text-transform: capitalize; font-size: 12px; text-align: center;
+  padding: .5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  word-spacing: .1rem;
+ }
+.attribution a { 
+  color: var(--grayish-blue);
+  text-decoration: none;
+  opacity: .89;
+ }
+
+@media (max-width:480px) {
+  .container h1 {
+    letter-spacing: .125rem;
+    font-size: 1.5rem;
+    margin-top: 10vh;
+  }
+  .card {
+    margin: 0 .2rem;
+  }
+  .num {
+    font-size: 2rem;
+  }
+  .caption {
+    font-size: 10px;
+  }
+  .tile {
+    height: 78px;
+  }
+  .form {
+    width: 80vmin;
+  }
+}
