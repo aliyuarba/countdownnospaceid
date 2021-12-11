@@ -29,7 +29,6 @@ header {
 
 .container {
   height: auto;
-  /* min-height: 100vh; */
   overflow: hidden;
   background-image: url(/images/bg-stars.svg), url(/images/pattern-hills.svg);
   background-repeat: no-repeat;
@@ -38,6 +37,7 @@ header {
 }
 
 .container h1 {
+  /* text we're launching soon */
   text-align: center;
   margin-top: 15vh;
   color: var(--white);
@@ -46,6 +46,7 @@ header {
 }
 
 .form-container {
+  /* black layer on active forms */
   position: fixed;
   background-color: rgba(0, 0, 0, 0.678);
   width: 100%;
@@ -58,7 +59,6 @@ header {
   z-index: 98;
   -webkit-transform: scale(0);
           transform: scale(0);
-  /* transition: 200ms; */
 }
 
 .form-container.active {
@@ -67,6 +67,7 @@ header {
 }
 
 .form {
+  /* form */
   padding: 1rem;
   background-color: var(--very-dark-blue);
   display: -webkit-box;
@@ -96,6 +97,7 @@ header {
 }
 
 .form label {
+  /* text choose a date */
   height: 46px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,6 +113,7 @@ header {
 }
 
 .form input {
+  /* style input at overall */
   display: block;
   margin: .4rem 0 0 0;
   height: 46px;
@@ -154,6 +157,12 @@ header {
   background-color: var(--grayish-blue);
 }
 
+.clear-cancel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #submit, #clear, #cancel {
   cursor: pointer;
 }
@@ -178,6 +187,7 @@ header {
 }
 
 .card-container {
+  /* countdown container box */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,12 +198,14 @@ header {
 }
 
 .card {
+  /* card container box */
   margin: 0 .5rem;
   width: 112px;
   position: relative;
 }
 
 .tile {
+  /* dark blue tile */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,6 +220,7 @@ header {
 }
 
 .tile::after, .tile::before {
+  /* make litle circle effect in aside of tile */
   content: "";
   width: 7px;
   height: 7px;
@@ -231,6 +244,7 @@ header {
 }
 
 .num {
+  /* countdown numeric */
   margin: auto;
   width: 100%;
   text-align: center;
@@ -240,6 +254,7 @@ header {
 }
 
 .num::after {
+  /* make center line effect at center of tile */
   content: "";
   width: 100%;
   height: 2px;
@@ -252,12 +267,15 @@ header {
 }
 
 .caption {
+  /* text of day, hours, etc */
   padding: 1rem 0;
   text-align: center;
   color: var(--grayish-blue);
+  font-size: .89rem;
 }
 
 footer {
+  /* add footer to store social media icon */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
